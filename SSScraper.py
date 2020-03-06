@@ -14,7 +14,7 @@ def clean_string(text,dic):
 	return text
 
 def send_influx(data):
-	dbClient = InfluxDBClient('10.11.12.131', 8086, 'root', 'root', 'SunSuper')
+	dbClient = InfluxDBClient('127.0.0.1', 8086, 'root', 'root', 'SunSuper')
 	dbClient.create_database('SunSuper')
 	dbClient.write_points(data,time_precision='s')
 
