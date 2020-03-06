@@ -8,11 +8,6 @@ from datetime import timezone
 from influxdb import InfluxDBClient
 from pyvirtualdisplay import Display
 
-def write_csv(content, filepath):
-	with open(filepath, 'w', newline='') as file:
-		writer=csv.writer(file,quoting=csv.QUOTE_ALL)
-		writer.writerows(content)
-
 def clean_string(text,dic):
 	for i, j in dic.items():
 		text=text.replace(i,j)
@@ -28,8 +23,6 @@ d={ "%": "", ",": "","$":""}
 my_list=[]
 user=""
 password=""
-default_directory="/home/ekul/Documents/Coates"
-filename="ssinvest.csv"
 
 display=Display(visible=0)
 display.start()
